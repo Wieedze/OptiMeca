@@ -14,14 +14,14 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-lg border-b border-dark-lighter/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-lg border-b border-primary/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="font-display text-3xl md:text-4xl">
+            <span className="font-display tech-title text-3xl md:text-4xl">
               <span className="text-white">OPTI</span>
-              <span className="text-gradient">MECA</span>
+              <span className="text-gradient-gold">MECA</span>
             </span>
           </a>
 
@@ -31,7 +31,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm font-medium uppercase tracking-wider"
+                className="text-gray-300 hover:text-electric transition-colors duration-300 text-sm font-medium uppercase tracking-wider"
               >
                 {link.name}
               </a>
@@ -40,7 +40,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button asChild size="sm">
+            <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider">
               <a href="#contact">
                 Devis Gratuit
               </a>
@@ -58,19 +58,19 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-dark-lighter/50">
+          <div className="md:hidden py-4 border-t border-primary/20">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-300 hover:text-primary transition-colors duration-300 text-sm font-medium uppercase tracking-wider py-2"
+                  className="text-gray-300 hover:text-electric transition-colors duration-300 text-sm font-medium uppercase tracking-wider py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <Button asChild size="sm" className="mt-4">
+              <Button asChild size="sm" className="mt-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider">
                 <a href="#contact" onClick={() => setIsMenuOpen(false)}>
                   Devis Gratuit
                 </a>

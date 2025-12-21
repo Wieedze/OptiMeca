@@ -55,11 +55,15 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
-          <span className="text-primary text-sm font-medium uppercase tracking-widest mb-4 block">
-            Contact
-          </span>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl mb-6">
-            Prêt à <span className="text-gradient">optimiser</span> ?
+          <div className="inline-flex items-center gap-2 mb-4">
+            <span className="circuit-node" />
+            <span className="text-electric text-sm font-medium uppercase tracking-widest">
+              Contact
+            </span>
+            <span className="circuit-node" />
+          </div>
+          <h2 className="font-display tech-title text-4xl md:text-6xl lg:text-7xl mb-6">
+            Prêt à <span className="text-gradient-gold">optimiser</span> ?
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             Contactez-nous pour un devis personnalisé gratuit. Notre équipe vous répondra sous 24h.
@@ -137,7 +141,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full" size="lg">
+                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold" size="lg">
                   Envoyer la demande
                 </Button>
               </form>
@@ -148,11 +152,11 @@ const Contact = () => {
             <div className="space-y-8">
               {contactInfo.map((item) => (
                 <div key={item.title} className="flex items-start gap-5 group">
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-all duration-300" style={{ backgroundColor: '#FF4500' }}>
-                    <item.icon className="w-6 h-6" style={{ color: '#FFFFFF' }} />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-electric flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:glow-blue transition-all duration-300">
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-medium text-gray-400 text-sm uppercase tracking-wider mb-1">
+                    <h4 className="font-medium text-electric text-sm uppercase tracking-wider mb-1">
                       {item.title}
                     </h4>
                     <p className="text-lg text-white">{item.value}</p>

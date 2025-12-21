@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   * {
@@ -10,7 +11,7 @@
   body {
     margin: 0;
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #0A0A0A;
+    background-color: #0A1929;
     color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,9 +19,9 @@
 }
 
 @layer utilities {
-  /* Gradients */
+  /* Gradients - Electric Blue Theme */
   .text-gradient {
-    background: linear-gradient(135deg, #FF4500 0%, #FF6B35 50%, #FF8C42 100%);
+    background: linear-gradient(135deg, #0EA5E9 0%, #00D4FF 50%, #38BDF8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -29,7 +30,7 @@
   }
 
   .text-gradient-slow {
-    background: linear-gradient(135deg, #FF4500 0%, #FF6B35 50%, #FF8C42 100%);
+    background: linear-gradient(135deg, #0EA5E9 0%, #00D4FF 50%, #38BDF8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -37,35 +38,60 @@
     animation: gradient-shift 8s ease infinite;
   }
 
-  /* Glow Effects */
-  .glow-orange {
-    box-shadow: 0 0 30px rgba(255, 69, 0, 0.4), 0 0 60px rgba(255, 69, 0, 0.2);
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #FBBF24 0%, #FCD34D 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
   }
 
-  .glow-orange-strong {
-    box-shadow: 0 0 40px rgba(255, 69, 0, 0.6), 0 0 80px rgba(255, 69, 0, 0.3), 0 0 120px rgba(255, 69, 0, 0.1);
+  /* Glow Effects - Electric Blue */
+  .glow-blue {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.4), 0 0 60px rgba(14, 165, 233, 0.2);
   }
 
-  /* Glassmorphism */
+  .glow-blue-strong {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.6), 0 0 80px rgba(14, 165, 233, 0.3), 0 0 120px rgba(14, 165, 233, 0.1);
+  }
+
+  .glow-electric {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5), 0 0 60px rgba(0, 212, 255, 0.3);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.2);
+  }
+
+  /* Glassmorphism - Navy Theme */
   .glass-card {
-    background: rgba(26, 26, 26, 0.7);
+    background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.2);
   }
 
   .glass-card-hover {
-    background: rgba(26, 26, 26, 0.8);
+    background: rgba(30, 58, 138, 0.8);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 69, 0, 0.3);
+    border: 1px solid rgba(14, 165, 233, 0.5);
   }
 
-  /* Animated Background */
+  /* Animated Background - Navy Theme */
   .bg-animated-gradient {
-    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #0A0A0A 100%);
+    background: linear-gradient(135deg, #0A1929 0%, #1E3A8A 50%, #0A1929 100%);
     background-size: 200% 200%;
     animation: gradient-shift 15s ease infinite;
+  }
+
+  .bg-circuit-pattern {
+    background-color: #0A1929;
+    background-image:
+      linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
   }
 
   /* Shimmer Effect */
@@ -95,31 +121,89 @@
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
-  /* Hero Gradient */
+  /* Hero Gradient - Electric Blue */
   .hero-gradient {
     background: radial-gradient(
       circle at 30% 50%,
-      rgba(255, 69, 0, 0.15) 0%,
+      rgba(14, 165, 233, 0.2) 0%,
+      rgba(0, 212, 255, 0.1) 30%,
+      transparent 60%
+    );
+  }
+
+  .hero-gradient-alt {
+    background: radial-gradient(
+      ellipse at 70% 30%,
+      rgba(0, 212, 255, 0.15) 0%,
       transparent 50%
     );
   }
 
-  /* Card Glass Effect */
+  /* Card Glass Effect - Navy/Blue Theme */
   .card-glass {
-    background: rgba(31, 31, 31, 0.7);
+    background: rgba(30, 41, 59, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
   }
 
   .card-glass:hover {
-    background: rgba(38, 38, 38, 0.85);
+    background: rgba(30, 58, 138, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 69, 0, 0.5);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 69, 0, 0.1);
+    border: 1px solid rgba(14, 165, 233, 0.6);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 30px rgba(14, 165, 233, 0.2);
+  }
+
+  /* Circuit Lines */
+  .circuit-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .circuit-line::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(14, 165, 233, 0.5) 20%,
+      rgba(0, 212, 255, 0.8) 50%,
+      rgba(14, 165, 233, 0.5) 80%,
+      transparent 100%
+    );
+    transform: translateY(-50%);
+    animation: circuit-flow 3s linear infinite;
+  }
+
+  /* Circuit Nodes */
+  .circuit-node {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    background: #0EA5E9;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.8), 0 0 20px rgba(14, 165, 233, 0.4);
+    animation: node-pulse 2s ease-in-out infinite;
+  }
+
+  .circuit-node::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    height: 4px;
+    background: #00D4FF;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00D4FF;
   }
 
   /* Fade In Animation */
@@ -140,7 +224,71 @@
 
   /* Glow Effect for progress bars */
   .glow-effect {
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.6), 0 0 40px rgba(255, 69, 0, 0.3);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.6), 0 0 40px rgba(14, 165, 233, 0.3);
+  }
+
+  /* Tech/Racing Typography */
+  .tech-title {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  .tech-title-slanted {
+    font-family: 'Orbitron', 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    font-style: italic;
+    transform: skewX(-5deg);
+  }
+
+  /* SVG Circuit Lines */
+  .svg-line-blue {
+    stroke: #0EA5E9;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.7;
+    stroke-dasharray: 12 8;
+    filter: url(#glowBlue);
+    animation: dashFlow 3s linear infinite;
+  }
+
+  .svg-line-electric {
+    stroke: #00D4FF;
+    stroke-width: 2;
+    fill: none;
+    opacity: 0.6;
+    stroke-dasharray: 12 8;
+    filter: url(#glowBlue);
+    animation: dashFlow 4s linear infinite;
+  }
+
+  /* SVG Circuit Nodes */
+  .svg-node-blue {
+    fill: #0EA5E9;
+    filter: url(#glowBlue);
+  }
+
+  .svg-node-electric {
+    fill: #00D4FF;
+    filter: url(#glowBlue);
+  }
+
+  .svg-node-gold {
+    fill: #FBBF24;
+    filter: url(#glowGold);
+  }
+
+  .svg-node-blue-small {
+    fill: #0EA5E9;
+    opacity: 0.8;
+  }
+
+  .svg-node-electric-small {
+    fill: #00D4FF;
+    opacity: 0.8;
   }
 }
 
@@ -170,10 +318,36 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(255, 69, 0, 0.8);
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.8);
+  }
+}
+
+@keyframes circuit-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.8), 0 0 20px rgba(14, 165, 233, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 1), 0 0 40px rgba(0, 212, 255, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -100;
   }
 }
 
