@@ -165,9 +165,18 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="mt-12 card-glass rounded-2xl h-64 flex items-center justify-center">
-              <span className="text-muted-foreground">Carte Google Maps</span>
+            {/* Google Maps */}
+            <div className="mt-12 card-glass rounded-2xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5757.49594349575!2d1.7202390767235944!3d43.81958684165275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ac29065cd93503%3A0x1b0d68f0ed99111a!2s4%20Pl.%20de%20la%20Matte%2C%2081800%20Rabastens!5e0!3m2!1sfr!2sfr!4v1766397054898!5m2!1sfr!2sfr"
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-64 md:h-80"
+              />
             </div>
           </div>
         </div>

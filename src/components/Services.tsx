@@ -106,7 +106,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group card-glass rounded-2xl p-8 hover:border-primary/60 transition-all duration-300 relative overflow-hidden cursor-pointer"
+              className="group card-glass rounded-2xl p-6 md:p-8 hover:border-primary/60 transition-all duration-300 relative overflow-hidden cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => toggleCard(index)}
             >
@@ -114,30 +114,30 @@ const Services = () => {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-circuit-pattern" />
 
               {/* Icon with glow - Electric Blue */}
-              <div className="relative w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-electric flex items-center justify-center mb-6 group-hover:scale-110 group-hover:glow-blue transition-all duration-300">
-                <service.icon className="w-7 h-7 text-white" />
+              <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-electric flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 group-hover:glow-blue transition-all duration-300">
+                <service.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
               </div>
 
               {/* Content */}
-              <div className="relative flex items-start justify-between gap-4 mb-4">
-                <h3 className="font-display text-2xl">{service.title}</h3>
-                <span className="px-3 py-1 rounded-full text-sm font-bold bg-accent/20 text-accent border border-accent/30">
+              <div className="relative flex items-start justify-between gap-2 md:gap-4 mb-3 md:mb-4">
+                <h3 className="font-display text-xl md:text-2xl">{service.title}</h3>
+                <span className="px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold bg-accent/20 text-accent border border-accent/30 whitespace-nowrap">
                   {service.gain}
                 </span>
               </div>
 
-              <p className="relative text-muted-foreground leading-relaxed mb-4">
+              <p className="relative text-muted-foreground text-sm md:text-base leading-relaxed mb-3 md:mb-4">
                 {service.description}
               </p>
 
               {/* Price */}
-              <div className="relative text-accent font-bold text-lg mb-2">
+              <div className="relative text-accent font-bold text-base md:text-lg mb-2">
                 {service.price}
               </div>
 
               {/* Expanded Details */}
-              <div className={`relative overflow-hidden transition-all duration-500 ${expandedCard === index ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
-                <div className="border-t border-primary/20 pt-6 space-y-4">
+              <div className={`relative overflow-hidden transition-all duration-500 ${expandedCard === index ? 'max-h-[600px] md:max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <div className="border-t border-primary/20 pt-4 md:pt-6 space-y-3 md:space-y-4">
                   {/* Avantages */}
                   <div>
                     <h4 className="text-electric font-semibold mb-2 uppercase text-sm tracking-wider">Avantages</h4>
@@ -178,7 +178,7 @@ const Services = () => {
 
         {/* CTA */}
         <div className="text-center mt-6">
-          <Button asChild size="lg" className="bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold">
+          <Button asChild size="lg" className="bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground text-sm md:text-base font-bold uppercase tracking-wider glow-gold">
             <a href="#contact">
               Demander un Devis Personnalisé
             </a>

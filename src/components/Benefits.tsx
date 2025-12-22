@@ -157,11 +157,11 @@ const Benefits = () => {
         </div>
 
         {/* Testimonial Carousel */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="card-glass bg-gradient-to-r from-primary/10 to-electric/10 border-primary/30 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+        <div className="relative max-w-4xl mx-auto px-4 md:px-0">
+          <div className="card-glass bg-gradient-to-r from-primary/10 to-electric/10 border-primary/30 rounded-2xl p-6 md:p-8 lg:p-12 relative overflow-hidden">
             <div className="flex flex-col items-start">
-              <div className="text-6xl text-accent mb-4 leading-none">"</div>
-              <div className="relative h-40 md:h-32 mb-6 overflow-hidden w-full">
+              <div className="text-4xl md:text-6xl text-accent mb-3 md:mb-4 leading-none">"</div>
+              <div className="relative h-48 sm:h-40 md:h-32 mb-4 md:mb-6 overflow-hidden w-full">
                 {testimonials.map((testimonial, index) => (
                   <div
                     key={index}
@@ -173,18 +173,18 @@ const Benefits = () => {
                         : 'opacity-0 translate-x-full'
                     }`}
                   >
-                    <p className="text-xl md:text-2xl italic text-gray-300">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl italic text-gray-300">
                       {testimonial.text}
                     </p>
                   </div>
                 ))}
               </div>
               <div>
-                <p className="font-bold text-lg">{testimonials[currentTestimonial].name}</p>
-                <p className="text-muted-foreground text-sm">{testimonials[currentTestimonial].vehicle}</p>
+                <p className="font-bold text-base md:text-lg">{testimonials[currentTestimonial].name}</p>
+                <p className="text-muted-foreground text-xs md:text-sm">{testimonials[currentTestimonial].vehicle}</p>
                 <div className="flex gap-1 mt-2">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <span key={i} className="text-accent">★</span>
+                    <span key={i} className="text-accent text-sm md:text-base">★</span>
                   ))}
                 </div>
               </div>
@@ -193,28 +193,28 @@ const Benefits = () => {
             {/* Navigation Arrows */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary/20 hover:bg-primary/40 flex items-center justify-center transition-all duration-300 group"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 hover:bg-primary/40 flex items-center justify-center transition-all duration-300 group"
               aria-label="Avis précédent"
             >
-              <ChevronLeft className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-primary group-hover:text-white transition-colors" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-primary/20 hover:bg-primary/40 flex items-center justify-center transition-all duration-300 group"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 hover:bg-primary/40 flex items-center justify-center transition-all duration-300 group"
               aria-label="Avis suivant"
             >
-              <ChevronRight className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-primary group-hover:text-white transition-colors" />
             </button>
           </div>
 
           {/* Dots Indicators */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-1.5 md:gap-2 mt-4 md:mt-6 flex-wrap">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentTestimonial ? 'bg-accent w-8' : 'bg-gray-600 hover:bg-gray-500'
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentTestimonial ? 'bg-accent w-6 md:w-8' : 'bg-gray-600 hover:bg-gray-500 w-2'
                 }`}
                 aria-label={`Aller à l'avis ${index + 1}`}
               />
