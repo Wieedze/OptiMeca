@@ -1,24 +1,24 @@
-import { Zap, Gauge, Fuel, Shield, Wrench, Award } from "lucide-react";
+import { Zap, Gauge, Fuel, Shield, Wrench, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: Zap,
     title: "Stage 1",
-    description: "Reprogrammation optimisée sans modification mécanique. Gain moyen de 20-30% de puissance.",
-    gain: "+30%",
+    description: "Reprogrammation optimisée sans modification mécanique. Augmentation significative de puissance et de couple.",
+    gain: "Stage",
   },
   {
     icon: Gauge,
     title: "Stage 2",
-    description: "Performance maximale avec admission et échappement sport. Jusqu'à 40% de gain.",
-    gain: "+40%",
+    description: "Performance maximale avec admission et échappement sport. Pour une conduite sportive ultime.",
+    gain: "Stage",
   },
   {
     icon: Fuel,
     title: "Conversion E85",
-    description: "Passez au bioéthanol pour économiser sur le carburant tout en gagnant en performances.",
-    gain: "-40%",
+    description: "Passez au bioéthanol et économisez jusqu'à 50% à la pompe tout en gagnant en performances.",
+    gain: "-50%",
   },
   {
     icon: Shield,
@@ -27,16 +27,16 @@ const services = [
     gain: "Fiabilité",
   },
   {
+    icon: KeyRound,
+    title: "Anti-démarrage",
+    description: "Désactivation professionnelle de l'anti-démarrage en cas de perte de clés ou dysfonctionnement.",
+    gain: "Sécurité",
+  },
+  {
     icon: Wrench,
     title: "Diagnostic Pro",
     description: "Analyse complète du calculateur et détection des anomalies avec équipement professionnel.",
     gain: "Précision",
-  },
-  {
-    icon: Award,
-    title: "Garantie",
-    description: "Toutes nos reprogrammations sont garanties. Retour à l'origine possible à tout moment.",
-    gain: "Confiance",
   },
 ];
 

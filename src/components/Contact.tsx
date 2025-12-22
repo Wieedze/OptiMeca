@@ -9,17 +9,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Adresse",
-    value: "Votre ville, France",
+    value: "4 place de la matte, 81800 Rabastens",
   },
   {
     icon: Phone,
     title: "Téléphone",
-    value: "06 XX XX XX XX",
+    value: "06 80 40 79 88",
   },
   {
     icon: Mail,
     title: "Email",
-    value: "contact@optimeca.fr",
+    value: "contact.optimeca31@hotmail.com",
   },
   {
     icon: Clock,
