@@ -1,0 +1,26 @@
+{
+  "name": "Optimeca - Reprogrammation Moteur Rabastens",
+  "short_name": "Optimeca",
+  "description": "Expert en reprogrammation moteur et optimisation automobile à Rabastens. Stage 1/2, E85, FAP/EGR, AdBlue.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1E",
+  "theme_color": "#0A0F1E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["automotive", "business"],
+  "lang": "fr-FR"
+}

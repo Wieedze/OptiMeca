@@ -1,0 +1,13 @@
+# Optimeca - Robots.txt
+# https://optimeca.org/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://optimeca.org/sitemap.xml
+
+# Crawl-delay (0 = pas de délai)
+Crawl-delay: 0
