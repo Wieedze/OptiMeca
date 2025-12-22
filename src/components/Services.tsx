@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Zap, Gauge, Fuel, Shield, Droplet, KeyRound, ChevronDown } from "lucide-react";
+import { Zap, Gauge, Fuel, Shield, Droplet, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -131,19 +131,12 @@ const Services = () => {
               </p>
 
               {/* Price */}
-              <div className="relative text-accent font-bold text-lg mb-4">
+              <div className="relative text-accent font-bold text-lg mb-2">
                 {service.price}
               </div>
 
-              {/* Expand/Collapse indicator */}
-              <div className="relative flex items-center justify-center">
-                <ChevronDown
-                  className={`w-6 h-6 text-primary transition-transform duration-300 ${expandedCard === index ? 'rotate-180' : ''}`}
-                />
-              </div>
-
               {/* Expanded Details */}
-              <div className={`relative overflow-hidden transition-all duration-500 ${expandedCard === index ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}>
+              <div className={`relative overflow-hidden transition-all duration-500 ${expandedCard === index ? 'max-h-[500px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
                 <div className="border-t border-primary/20 pt-6 space-y-4">
                   {/* Avantages */}
                   <div>
@@ -176,8 +169,15 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Diagnostic Note */}
+        <div className="text-center mt-8 mb-6">
+          <p className="text-gray-400 text-sm md:text-base">
+            <span className="text-accent font-semibold">*Diagnostic complet : 60€</span> - Offert pour toute prestation
+          </p>
+        </div>
+
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-6">
           <Button asChild size="lg" className="bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold">
             <a href="#contact">
               Demander un Devis Personnalisé
