@@ -32,10 +32,6 @@ const Footer = () => {
             © {currentYear} Optimeca. Tous droits réservés.
           </p>
         </div>
-
-        {/* Decorative circuit nodes */}
-        <div className="absolute bottom-4 left-10 circuit-node" />
-        <div className="absolute top-4 right-20 circuit-node" />
       </div>
     </footer>
   );

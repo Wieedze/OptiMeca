@@ -21,11 +21,6 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge with pulse animation - Electric Blue */}
-          <div className="animate-fade-in inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm mb-8">
-            <span className="circuit-node" />
-          </div>
-
           {/* Title with fade-in animation */}
           <h1
             className="font-display tech-title text-5xl md:text-7xl lg:text-8xl leading-none mb-6 animate-fade-in"
@@ -51,7 +46,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in"
             style={{ animationDelay: '0.3s' }}
           >
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider hover:shadow-xl hover:shadow-accent/30 glow-gold">
+            <Button asChild size="lg" className="bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider hover:shadow-xl hover:shadow-accent/30 glow-gold">
               <a href="#contact">
                 Demander un devis
               </a>
@@ -61,23 +56,6 @@ const Hero = () => {
                 Nos services
               </a>
             </Button>
-          </div>
-
-          {/* Stats with animated fade-in */}
-          <div
-            className="grid grid-cols-3 gap-8 mt-16 md:mt-24 animate-fade-in"
-            style={{ animationDelay: '0.4s' }}
-          >
-            {[
-              { value: "500+", label: "Véhicules optimisés" },
-              { value: "5+", label: "Années d'expérience" },
-              { value: "98%", label: "Clients satisfaits" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-display text-3xl md:text-5xl text-gradient mb-2">{stat.value}</div>
-                <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

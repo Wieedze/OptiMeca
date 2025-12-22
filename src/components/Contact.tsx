@@ -141,7 +141,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold" size="lg">
+                <Button type="submit" className="w-full bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold" size="lg">
                   Envoyer la demande
                 </Button>
               </form>

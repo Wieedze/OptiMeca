@@ -32,10 +32,12 @@ const Expertise = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="font-display text-2xl mb-2">Expertise de Haut Niveau</h3>
-                <p className="text-gray-300">
-                  Formés aux dernières technologies et techniques de reprogrammation automobile
-                </p>
+                <div className="bg-dark/80 backdrop-blur-sm p-6 rounded-xl">
+                  <h3 className="font-display text-2xl mb-2">Expertise de Haut Niveau</h3>
+                  <p className="text-gray-300">
+                    Formés aux dernières technologies et techniques de reprogrammation automobile
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -50,10 +52,12 @@ const Expertise = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="font-display text-2xl mb-2">Service Client Premium</h3>
-                <p className="text-gray-300">
-                  Accompagnement personnalisé et conseils d'experts pour votre projet
-                </p>
+                <div className="bg-dark/80 backdrop-blur-sm p-6 rounded-xl">
+                  <h3 className="font-display text-2xl mb-2">Service Client Premium</h3>
+                  <p className="text-gray-300">
+                    Accompagnement personnalisé et conseils d'experts pour votre projet
+                  </p>
+                </div>
               </div>
             </div>
           </div>
