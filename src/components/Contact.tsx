@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "contact.optimeca31@hotmail.com",
+    value: "optimec31@hotmail.com",
   },
   {
     icon: Clock,
@@ -39,8 +39,26 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Merci pour votre demande ! Nous vous contacterons sous 24h.');
+
+    // Créer le contenu de l'email
+    const subject = `Demande de devis - ${formData.vehicule}`;
+    const body = `
+Nom: ${formData.nom}
+Téléphone: ${formData.telephone}
+Email: ${formData.email}
+Véhicule: ${formData.vehicule}
+
+Message:
+${formData.message}
+    `.trim();
+
+    // Ouvrir le client email avec les données pré-remplies
+    window.location.href = `mailto:optimec31@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Message de confirmation
+    setTimeout(() => {
+      alert('Votre client email va s\'ouvrir. Si ce n\'est pas le cas, contactez-nous directement au 06 80 40 79 88');
+    }, 500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
