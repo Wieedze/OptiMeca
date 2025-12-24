@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "optimec31@hotmail.com",
+    value: "Optimeca31@hotmail.com",
   },
   {
     icon: Clock,
@@ -36,29 +36,44 @@ const Contact = () => {
     vehicule: '',
     message: ''
   });
+  const [result, setResult] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setResult("Envoi en cours...");
 
-    // Créer le contenu de l'email
-    const subject = `Demande de devis - ${formData.vehicule}`;
-    const body = `
-Nom: ${formData.nom}
-Téléphone: ${formData.telephone}
-Email: ${formData.email}
-Véhicule: ${formData.vehicule}
+    // Créer un FormData avec tous les champs
+    const formDataToSend = new FormData(e.currentTarget);
+    formDataToSend.append("access_key", "61c4f273-b53b-4145-b7a0-c12c3566c0cc");
 
-Message:
-${formData.message}
-    `.trim();
+    // Ajouter des champs supplémentaires pour l'email
+    formDataToSend.append("subject", `Demande de devis - ${formData.vehicule}`);
+    formDataToSend.append("from_name", "Formulaire Optimeca");
 
-    // Ouvrir le client email avec les données pré-remplies
-    window.location.href = `mailto:optimec31@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      });
 
-    // Message de confirmation
-    setTimeout(() => {
-      alert('Votre client email va s\'ouvrir. Si ce n\'est pas le cas, contactez-nous directement au 06 80 40 79 88');
-    }, 500);
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("✅ Merci ! Votre demande a été envoyée. Nous vous contacterons sous 24h.");
+        // Réinitialiser le formulaire
+        setFormData({
+          nom: '',
+          telephone: '',
+          email: '',
+          vehicule: '',
+          message: ''
+        });
+      } else {
+        setResult("❌ Erreur lors de l'envoi. Contactez-nous au 06 80 40 79 88");
+      }
+    } catch (error) {
+      setResult("❌ Erreur lors de l'envoi. Contactez-nous au 06 80 40 79 88");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -162,6 +177,19 @@ ${formData.message}
                 <Button type="submit" className="w-full bg-accent/80 backdrop-blur-md hover:bg-accent/90 text-accent-foreground font-bold uppercase tracking-wider glow-gold" size="lg">
                   Envoyer la demande
                 </Button>
+
+                {/* Message de résultat */}
+                {result && (
+                  <div className={`mt-4 p-4 rounded-lg text-center ${
+                    result.includes('✅')
+                      ? 'bg-green-500/10 border border-green-500/30 text-green-400'
+                      : result.includes('❌')
+                      ? 'bg-red-500/10 border border-red-500/30 text-red-400'
+                      : 'bg-blue-500/10 border border-blue-500/30 text-blue-400'
+                  }`}>
+                    {result}
+                  </div>
+                )}
               </form>
           </div>
 
