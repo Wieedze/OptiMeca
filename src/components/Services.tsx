@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Zap, Gauge, Fuel, Shield, Droplet, KeyRound } from "lucide-react";
+import { Zap, Gauge, Fuel, Shield, Droplet, KeyRound, Truck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
@@ -67,6 +67,17 @@ const services = [
     details: {
       avantages: ["Plus de remplissage AdBlue", "Économie sur l'entretien", "Fini les pannes liées à l'AdBlue", "Performance préservée"],
       processus: ["Diagnostic système SCR", "Désactivation logicielle AdBlue", "Reprogrammation calculateur", "Effacement codes défauts", "Test et validation"]
+    }
+  },
+  {
+    icon: Truck,
+    title: "Poids Lourds & Agricole",
+    description: "Reprogrammation spécialisée pour poids lourds, tracteurs et engins agricoles. Optimisation adaptée aux contraintes professionnelles.",
+    gain: "Pro",
+    price: "Sur devis",
+    details: {
+      avantages: ["Optimisation pour usage intensif", "Réduction consommation carburant", "Couple moteur amélioré", "Adaptée aux contraintes professionnelles"],
+      processus: ["Diagnostic véhicule professionnel", "Analyse usage et contraintes", "Reprogrammation sur-mesure", "Tests en conditions réelles", "Validation performance"]
     }
   },
 ];
